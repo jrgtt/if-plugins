@@ -66,7 +66,7 @@ initialize:
   plugins:
     sum:
       method: Sum
-      path: '@grnsft/if-plugins'
+      path: 'builtin'
       global-config:
         input-parameters: ['cpu/energy', 'network/energy']
         output-parameter: 'energy'
@@ -74,7 +74,8 @@ tree:
   children:
     child:
       pipeline:
-        - sum
+        compute:
+          - sum
       config:
         sum:
       inputs:
